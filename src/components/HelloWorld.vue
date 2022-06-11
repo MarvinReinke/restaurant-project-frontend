@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button type="button" class="btn btn-primary">Primary</button>
-
+    <router-link :to="'/asiatisch'"><button>Asiatisch</button> </router-link>
+    <router-link :to="'/indisch'"><button>Indisch</button> </router-link>
   </div>
 </template>
 
@@ -30,5 +30,10 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.n{
+  background: #eee;
+  color: #444;
 }
 </style>
