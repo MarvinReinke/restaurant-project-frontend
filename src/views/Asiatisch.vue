@@ -21,20 +21,7 @@ export default {
   name: 'Asiatisch',
   data () {
     return {
-      restaurants: [
-        /* {
-          id: 1,
-          name: 'Mr.Wu',
-          adresse: 'neukoellner Straße',
-          hausnummer: 89
-        },
-        {
-          id: 2,
-          name: 'Cocolo Ramen',
-          adresse: 'kreuzberger Straße',
-          hausnummer: 16
-        } */
-      ]
+      restaurants: []
     }
   },
   methods: {
