@@ -1,8 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <router-link :to="'/asiatisch'"><button>Asiatisch</button> </router-link>
-    <router-link :to="'/indisch'"><button>Indisch</button> </router-link>
   </div>
 </template>
 
