@@ -1,36 +1,23 @@
 <template>
   <h1>Hier ist asiatisches Essen</h1>
   <div class="asiatisch">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
-         <div class="card">
-         <img :src="getPicture(restaurant)" class="card-img-top" :alt="restaurant.name">
-          <div class="card-body">
-          <h5 class="card-title">{{ restaurant.name }}</h5>
-          <p class="card-text">{{ restaurant.name }} ist eines der beliebtesten asiatischen Restaurants in Berlin. Es befindet sich
-          in der {{ restaurant.adresse }} in der Hausnummer {{ restaurant.hausnummer }}</p>
-        </div>
-       </div>
-      </div>
-    </div>
+    <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
   </div>
+  <restaurant-create-form></restaurant-create-form>
 </template>
 
 <script>
+import RestaurantCardList from '../components/RestaurantCardList'
+import RestaurantCreateForm from '../components/RestaurantCreateForm'
 export default {
   name: 'Asiatisch',
+  components: {
+    RestaurantCardList,
+    RestaurantCreateForm
+  },
   data () {
     return {
       restaurants: []
-    }
-  },
-  methods: {
-    getPicture (restaurant) {
-      if (restaurant.name === 'Mr.Wu') {
-        return require('../assets/MrWu.jpg')
-      } else if (restaurant.name === 'Cocolo Ramen') {
-        return require('../assets/CocoloRamen.jpg')
-      }
     }
   },
   mounted () {

@@ -1,17 +1,29 @@
 <template>
   <nav>
-    <router-link :to="'/asiatisch'"><button type="button" class="btn btn-primary">Asiatisch</button></router-link>
-    <router-link :to="'/indisch'"><button type="button" class="btn btn-primary">Indisch</button></router-link>
-    <button type="button" class="btn btn-primary">Italienisch</button>
+    <div class="d-grid- gap-2">
+     <button class="btn btn-primary" type="button">{{ buttonText }} </button>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'GroupButtons'
+  name: 'GroupButtons',
+  props: {
+    buttonText: {
+      type: String,
+      default: () => 'Label'
+    }
+  }
 }
+
 </script>
 
-<style scoped>
-
+<style>
+/*.style {
+  background: white;
+  color: blueviolet;
+  border-color: black;
+  border-radius: 10px;
+}*/
 </style>

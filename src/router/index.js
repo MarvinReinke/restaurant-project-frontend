@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Asiatisch from '../views/Asiatisch'
 import Indisch from '../views/Indisch'
+import Italienisch from '../views/Italienisch'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/indisch',
     name: 'Indisch',
     component: Indisch
+  },
+  {
+    path: '/italienisch',
+    name: 'Italienisch',
+    component: Italienisch
   }
 ]
 
