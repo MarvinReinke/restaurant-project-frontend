@@ -9,19 +9,19 @@
       <div class="row g-3">
         <div class="col-12">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="India Palace" v-model="name">
+          <input type="text" class="form-control" id="name" placeholder="India Palace" v-model="name" required>
         </div>
         <div class="col-12">
           <label for="inputAddress" class="form-label">Adresse</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Am Buchsbaumweg" v-model="adresse">
+          <input type="text" class="form-control" id="inputAddress" placeholder="Am Buchsbaumweg" v-model="adresse" required>
         </div>
         <div class="col-md-2">
           <label for="hausnummer" class="form-label">Hausnummer</label>
-          <input type="text" class="form-control" id="hausnummer" v-model="hausnummer">
+          <input type="text" class="form-control" id="hausnummer" v-model="hausnummer" required>
         </div>
         <div class="col-12">
           <label for="kategorie" class="form-label">Kategorie</label>
-          <input type="text" class="form-control" id="kategorie" placeholder="1" v-model="kategorie">
+          <input type="text" class="form-control" id="kategorie" placeholder="asiatisch" v-model="kategorie" required>
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary" @click="createRestaurant">Hinzufügen</button>
@@ -49,7 +49,7 @@ export default {
       const headers = new Headers()
       headers.append('Content-Type', 'application/json')
 
-      const payload = JSON.stringify({
+      const restaurant = JSON.stringify({
         name: this.name,
         adresse: this.adresse,
         hausnummer: this.hausnummer,
@@ -59,7 +59,7 @@ export default {
       const requestOptions = {
         method: 'POST',
         headers: headers,
-        body: payload,
+        body: restaurant,
         redirect: 'follow'
       }
 

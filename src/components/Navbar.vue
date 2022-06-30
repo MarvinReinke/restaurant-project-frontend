@@ -8,9 +8,9 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="nav-link" to="/kategorien">Kategorien</router-link>
+          <router-link class="nav-link" to="/restaurants">Restaurants</router-link>
           <router-link class="nav-link" to="/about">About</router-link>
-<!--          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">About</a>-->
         </div>
       </div>
     </div>

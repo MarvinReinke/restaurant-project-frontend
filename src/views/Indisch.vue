@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted () {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/restaurants/2'
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/restaurants'
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'

@@ -1,7 +1,7 @@
 <template>
-  <h1>Hier ist asiatisches Essen</h1>
-  <div class="asiatisch">
-    <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
+ <h1>Hier findest du alle verfügbaren Restaurants an einem Ort</h1>
+  <div class="restaurants">
+  <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
   </div>
   <restaurant-create-form></restaurant-create-form>
 </template>
@@ -11,7 +11,7 @@ import RestaurantCardList from '../components/RestaurantCardList'
 import RestaurantCreateForm from '../components/RestaurantCreateForm'
 
 export default {
-  name: 'Asiatisch',
+  name: 'Restaurants',
   components: {
     RestaurantCardList,
     RestaurantCreateForm
@@ -36,6 +36,7 @@ export default {
       .catch(error => console.log('error', error))
   }
 }
+
 </script>
 
 <style scoped>

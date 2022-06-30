@@ -14,7 +14,12 @@
 <script>
 export default {
   name: 'RestaurantCard',
-
+  props: {
+    restaurant: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     getPicture (restaurant) {
       if (restaurant.name === 'Mr.Wu') {

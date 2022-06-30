@@ -4,6 +4,8 @@ import About from '../views/About.vue'
 import Asiatisch from '../views/Asiatisch'
 import Indisch from '../views/Indisch'
 import Italienisch from '../views/Italienisch'
+import Kategorien from '../views/Kategorien'
+import Restaurants from '../views/Restaurants'
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: '/italienisch',
     name: 'Italienisch',
     component: Italienisch
+  },
+  {
+    path: '/kategorien',
+    name: 'Kategorien',
+    component: Kategorien
+  },
+  {
+    path: '/restaurants',
+    name: 'Restaurants',
+    component: Restaurants
   }
 ]
 
