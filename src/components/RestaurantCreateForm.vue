@@ -3,10 +3,10 @@
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasRightLabel">Restaurant hinzufügen</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" id="close-offcanvas" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" id="restaurant-create-form" novalidate>
         <div class="row g-3">
           <div class="col-12">
             <label for="name" class="form-label">Name</label>
@@ -36,8 +36,15 @@
               Bitte gebe an zu welcher Kategorie das Restaurant gehört
             </div>
           </div>
+          <div v-if="this.serverValidationMessages">
+            <ul>
+              <li v-for="(message, index) in serverValidationMessages" :key="index" style="color: red">
+                {{ message }}
+              </li>
+            </ul>
+          </div>
           <div class="mt-5">
-            <button class="btn btn-primary m-3" type="submit" @click="createRestaurant">Hinzufügen</button>
+            <button class="btn btn-primary m-3" type="submit" @click.prevent="createRestaurant">Hinzufügen</button>
           </div>
         </div>
       </form>
@@ -53,13 +60,14 @@ export default {
       name: '',
       adresse: '',
       hausnummer: '',
-      kategorie: ''
+      kategorie: '',
+      serverValidationMessages: []
     }
   },
+  emits: ['created'],
   methods: {
-    createRestaurant  () {
-      const valid = this.validate()
-      if (valid) {
+    async createRestaurant  () {
+      if (this.validate()) {
         const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/restaurants'
 
         const headers = new Headers()
@@ -79,28 +87,27 @@ export default {
           redirect: 'follow'
         }
 
-        fetch(endpoint, requestOptions)
-          .catch(error => console.log('error', error))
+        const response = await fetch(endpoint, requestOptions)
+        await this.handleResponse(response)
+      }
+    },
+    async handleResponse (response) {
+      if (response.ok) {
+        this.$emit('created', response.headers.get('location'))
+        document.getElementById('close-offcanvas').click()
+      } else if (response.status === 400) {
+        response = await response.json()
+        response.errors.forEach(error => {
+          this.serverValidationMessages.push(error.defaultMessage)
+        })
+      } else {
+        this.serverValidationMessages.push('Unknown error occured')
       }
     },
     validate () {
-      let valid = true
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      const forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            valid = false
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-      return valid
+      const form = document.getElementById('restaurant-create-form')
+      form.classList.add('was-validated')
+      return form.checkValidity()
     }
   }
 }

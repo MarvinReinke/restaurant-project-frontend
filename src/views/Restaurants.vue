@@ -3,7 +3,7 @@
   <div class="restaurants">
   <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
   </div>
-  <restaurant-create-form></restaurant-create-form>
+  <restaurant-create-form @created="addRestaurant"></restaurant-create-form>
 </template>
 
 <script>
@@ -19,6 +19,19 @@ export default {
   data () {
     return {
       restaurants: []
+    }
+  },
+  methods: {
+    addRestaurant (restaurantLocation) {
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + restaurantLocation
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      }
+      fetch(endpoint, requestOptions)
+        .then(response => response.json())
+        .then(restaurant => this.restaurants.push(restaurant))
+        .catch(error => console.log('error', error))
     }
   },
   mounted () {
