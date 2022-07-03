@@ -6,19 +6,21 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div class="row g-3">
-        <div class="col-12">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Favoriten" v-model="kategorienName" required>
+      <form>
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Favoriten" v-model="kategorienName" required>
+          </div>
+          <div class="col-12">
+            <label for="Beschreibung" class="form-label">Beschreibung</label>
+            <input type="text" class="form-control" id="Beschreibung" placeholder="Beschreibe die Kategorie" v-model="kategorienBeschreibung" >
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" @click="createKategorie">Hinzufügen</button>
+          </div>
         </div>
-        <div class="col-12">
-          <label for="Beschreibung" class="form-label">Beschreibung</label>
-          <input type="text" class="form-control" id="Beschreibung" placeholder="Beschreibe die Kategorie" v-model="kategorienBeschreibung" >
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary" @click="createKategorie">Hinzufügen</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>

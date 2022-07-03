@@ -31,6 +31,8 @@ export default {
         return require('../assets/ItalienischKategorie.png')
       } else if (kategorien.kategorienName === 'Mexikanisch') {
         return require('../assets/Mexikanisch.png')
+      } else if (kategorien.kategorienName === 'Asiatisch') {
+        return require('../assets/Asiatisch.png')
       }
     }
   }
