@@ -20,7 +20,7 @@
     Kategorie anlegen willst kannst du auch in die jeweiligen Tabs wechseln mithilfe der Navbar. <br> <br>
     Falls du nicht mehr weißt, wie du was machst, kannst du jederzeit zu dieser Seite zurückkehren. <br>
     Wir wünschen dir viel Spaß!</h3>
-    <a class="btn btn-success" href="http://localhost:2002/" style="border-radius: 30px;padding-left: 50px;padding-right: 50px; margin-top: 30px" role="button"><b> zur Startseite </b></a>
+    <a class="btn btn-success" href="https://find-your-spot-frontend.herokuapp.com/" style="border-radius: 30px;padding-left: 50px;padding-right: 50px; margin-top: 30px" role="button"><b> zur Startseite </b></a>
   </div>
 </template>
 

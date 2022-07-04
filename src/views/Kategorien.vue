@@ -1,7 +1,7 @@
 <template>
   <div class="ktgr">
     <h1>Hier findest du alle Kategorien</h1>
-    <h4>Gucke dir die verfügbaren Kategorien an, order füge eine eigene Kategorie hinzu</h4>
+    <h4>Gucke dir die verfügbaren Kategorien an, oder füge eine eigene Kategorie hinzu</h4>
   </div>
     <div class="container-fluid">
      <kategorie-card-list :kategorien="this.kategorien"></kategorie-card-list>

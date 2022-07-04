@@ -1,8 +1,11 @@
 <template>
+  <div class="restaurants">
   <h1 style>Hier findest du alle verfügbaren Restaurants an einem Ort</h1>
-   <div class="container-fluid">
+  <h4>Gucke dir die verfügbaren Restaurants an, oder füge eigene Restaurants hinzu</h4>
+  <div class="container-fluid">
     <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
    </div>
+  </div>
   <restaurant-create-form @created="addRestaurant"></restaurant-create-form>
 </template>
 
@@ -53,5 +56,8 @@ export default {
 </script>
 
 <style scoped>
+.restaurants{
+  color: navajowhite;
+}
 
 </style>
