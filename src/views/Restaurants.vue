@@ -1,5 +1,5 @@
 <template>
-  <h1>Hier findest du alle verfügbaren Restaurants an einem Ort</h1>
+  <h1 style>Hier findest du alle verfügbaren Restaurants an einem Ort</h1>
    <div class="container-fluid">
     <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
    </div>

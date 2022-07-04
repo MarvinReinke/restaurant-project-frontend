@@ -21,10 +21,14 @@ export default {
 </script>
 
 <style>
- background {
-  background-image: url('../assets/declaration-form-1.png');
+ body {
+  background-image: url('../assets/Hintergrund.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
+ .home{
+   padding-top: 20px;
+   color: mintcream;
+ }
 </style>
