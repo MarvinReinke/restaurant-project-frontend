@@ -29,6 +29,8 @@ export default {
         return require('../assets/Mexikanisch.png')
       } else if (kategorie.kategorienName === 'Asiatisch') {
         return require('../assets/Asiatisch.png')
+      } else if (kategorie.kategorienName === 'Orientalisch') {
+        return require('../assets/Orientalisch.jpg')
       }
     }
   }
