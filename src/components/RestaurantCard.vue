@@ -1,14 +1,13 @@
 <template>
-  <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
-    <div class="card">
+    <div class="card h-100">
       <img :src="getPicture(restaurant)" class="card-img-top" :alt="restaurant.name">
       <div class="card-body">
-        <h5 class="card-title">{{ restaurant.name }}</h5>
+        <h5 class="card-title">{{ restaurant.name }}, Restaurant-Referenz-Nummer: {{ restaurant.id }}</h5>
         <p class="card-text">{{ restaurant.name }} ist eines der beliebtesten asiatischen Restaurants in Berlin. Es befindet sich
-          in der {{ restaurant.adresse }} in der Hausnummer {{ restaurant.hausnummer }}. Es gehört zur Kategorie {{ restaurant.kategorie }}</p>
+          in der {{ restaurant.adresse }} in der Hausnummer {{ restaurant.hausnummer }}. Es gehört zur Kategorie {{ restaurant.kategorie.kategorienName }}
+        </p>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

@@ -1,14 +1,14 @@
 <template>
- <h1>Hier findest du alle verfügbaren Restaurants an einem Ort</h1>
-  <div class="restaurants">
-  <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
-  </div>
+  <h1>Hier findest du alle verfügbaren Restaurants an einem Ort</h1>
+   <div class="container-fluid">
+    <restaurant-card-list :restaurants="this.restaurants"></restaurant-card-list>
+   </div>
   <restaurant-create-form @created="addRestaurant"></restaurant-create-form>
 </template>
 
 <script>
-import RestaurantCardList from '../components/RestaurantCardList'
-import RestaurantCreateForm from '../components/RestaurantCreateForm'
+import RestaurantCardList from '@/components/RestaurantCardList'
+import RestaurantCreateForm from '@/components/RestaurantCreateForm'
 
 export default {
   name: 'Restaurants',

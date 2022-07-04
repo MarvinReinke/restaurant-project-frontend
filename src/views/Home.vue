@@ -4,25 +4,27 @@
     <Hello msg="Willkommen bei FindYourSpot!"/>
     <h2 style="margin-top: 20px">Hier findest du alle Restaurants, zu denen du, oder deine Freunde schon immer hingehen wollten!</h2>
     <h4>Klicke auf die Kategorien um dir die Restaurants anzusehen, oder erstelle deine eigene Kategorie mit eigenen Restaurants!</h4>
-    <router-link :to="'/asiatisch'"><groupButtons style="margin-top: 50px" buttonText = 'Asiatisch'/></router-link>
-    <router-link :to="'/indisch'"><groupButtons style="margin-top: 10px" buttonText = 'Indisch'/></router-link>
-    <router-link :to="'/italienisch'"><groupButtons style="margin-top: 10px" buttonText = 'Italienisch'/></router-link>
+  <a class="btn btn-success" href="http://localhost:2002/kategorien" style="border-radius: 30px;padding-left: 50px;padding-right: 50px" role="button"><b> Lass uns Anfangen! </b></a>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Hello from '@/components/Hello.vue'
-import GroupButtons from '@/components/GroupButtons'
 
 export default {
   name: 'Home',
   components: {
-    Hello,
-    GroupButtons
+    Hello
   }
 }
 </script>
 
 <style>
+ background {
+  background-image: url('../assets/declaration-form-1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 </style>
