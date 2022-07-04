@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     getPicture (restaurant) {
-      if (restaurant.name === 'Mr.WU') {
+      if (restaurant.kategorie.kategorienName === 'Asiatisch') {
         return require('../assets/MrWu.jpg')
       } else if (restaurant.name === 'Cocolo Ramen') {
         return require('../assets/CocoloRamen.jpg')

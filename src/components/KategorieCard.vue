@@ -31,6 +31,10 @@ export default {
         return require('../assets/Asiatisch.png')
       } else if (kategorie.kategorienName === 'Orientalisch') {
         return require('../assets/Orientalisch.jpg')
+      } else if (kategorie.kategorienName === 'Favoriten') {
+        return require('../assets/Favoriten.png')
+      } else {
+        return require('../assets/Eigene Kategorie.png')
       }
     }
   }
