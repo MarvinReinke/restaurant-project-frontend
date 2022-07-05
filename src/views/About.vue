@@ -2,7 +2,7 @@
   <div class="help">
     <h1>Cool, dass du hier bist.</h1>
     <h2>Bei FindYourSpot hast du die Möglichkeit all deine Lieblingsrestaurants an einem Ort zu finden. <br> <br>
-      Wie funktioniert das?</h2> <br>
+    </h2> <br>
     <h3>Eigentlich ist Das ganz einfach. Im Kategorien-Tab in der oberen Leiste kannst du zwischen den Seiten <br>
     Kategorien und Restaurants auswählen. Unter "Kategorien" findest du alle bisher angelegten Kategorien mit ihrem <br>
     Namen und ihrer Referenznummer. Zudem findest du eine Beschreibung der Kategorie und die Referenz-Nummern der <br>

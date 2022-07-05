@@ -41,6 +41,6 @@ describe('Testing RestaurantCard.vue', () => {
     })
     // then
     const cardBody = wrapper.find('.card-text')
-    expect(cardBody.text()).toBe('Mr.Wu ist eines der beliebtesten asiatischen Restaurants in Berlin. Es befindet sich in der Waldhofweg in der Hausnummer 78. Es gehört zur Kategorie Asiatisch')
+    expect(cardBody.text()).toBe('Mr.Wu ist ein Restaurant in Berlin. Es befindet sich in der folgenden Straße: Waldhofweg in der Hausnummer 78.  Es gehört zur Kategorie Asiatisch')
   })
 })
